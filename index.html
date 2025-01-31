@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Nature Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .fact-display {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            min-height: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Nature Facts</h1>
+        <div id="factDisplay" class="fact-display"></div>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                title: "Biodiversity",
+                description: "Earth is home to an estimated 8.7 million species of plants and animals, with about 80% still undiscovered."
+            },
+            {
+                title: "Oxygen Production",
+                description: "Approximately 50% of the Earth's oxygen is produced by phytoplankton in the oceans."
+            },
+            {
+                title: "Oldest Living Organism",
+                description: "The oldest known living organism is a bristlecone pine tree in California, estimated to be over 5,000 years old."
+            },
+            {
+                title: "Water Coverage",
+                description: "About 71% of the Earth's surface is covered by water, but only 2.5% of that is freshwater."
+            },
+            {
+                title: "Coral Reefs",
+                description: "Coral reefs support about 25% of all marine species, despite covering less than 1% of the ocean floor."
+            },
+            {
+                title: "Migration",
+                description: "The Arctic Tern holds the record for the longest migration of any animal, traveling about 71,000 kilometers (44,000 miles) each year between its breeding and wintering grounds."
+            },
+            {
+                title: "Plant Communication",
+                description: "Plants can communicate with each other through a network of fungi in the soil, often referred to as the 'Wood Wide Web.'"
+            },
+            {
+                title: "Deepest Point",
+                description: "The Mariana Trench is the deepest part of the world's oceans, reaching depths of about 36,000 feet (over 10,900 meters)."
+            },
+            {
+                title: "Largest Living Structure",
+                description: "The Great Barrier Reef is the largest living structure on Earth, stretching over 2,300 kilometers (1,430 miles) along the coast of Australia."
+            },
+            {
+                title: "Natural Recycling",
+                description: "Nature has its own recycling system; for example, decomposers like fungi and bacteria break down dead organic matter, returning nutrients to the soil."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            document.getElementById('factDisplay').innerHTML = `<h2>${fact.title}</h2><p>${fact.description}</p>`;
+        });
+    </script>
+</body>
+</html>
